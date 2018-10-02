@@ -1,9 +1,12 @@
 const express = require('express')
 const morgan = require('morgan') 
 const authRoutes = require('./routes/auth-router')
+const mongoose = require('mongoose')
+const keys = require('./config/keys')
 
 var app = express();
 
+mongoose.connect(keys.databaseURI, {useNewUrlParser: true});
 
 app.use(morgan('tiny'));
 

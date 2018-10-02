@@ -10,4 +10,8 @@ router.get('/logout', (req, res) => {
     res.send('Loggin out');
 });
 
+router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
+    res.send('CallbackURL reached')
+});
+
 module.exports = router;
