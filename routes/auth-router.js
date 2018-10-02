@@ -11,7 +11,11 @@ router.get('/logout', (req, res) => {
 });
 
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-    res.send('CallbackURL reached')
+    res.send(req.user)
+});
+
+router.get('/test', (req, res) => {
+    res.send('Usuario logado: ' + req.user);
 });
 
 module.exports = router;
