@@ -24,15 +24,15 @@ passport.use(new GoogleStrategy({
             if(foundUser){
                 console.log('User já existe:')
                 console.log(foundUser)
-                done(null, foundUser); //Chama serialize, passando foundUser
+                done(null, foundUser); 
             }else{
-                //Salva usuario no bd, pois ainda nao existe um usuario com esse googleId no bd
+              
                 new User({
                    username: profileInfo.displayName,
                    googleId: profileInfo.id
                }).save().then(newUser => {
                    console.log(newUser)
-                   done(null, newUser); //Chama serialize, passando newUser
+                   done(null, newUser);
                })
             }
         })

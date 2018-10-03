@@ -6,6 +6,7 @@ const keys = require('./config/keys')
 const cookieSession = require('cookie-session')
 const passport = require('passport')
 const todoRoutes = require('./routes/todo-routes')
+const cors = require('cors')
 
 const app = express();
 
