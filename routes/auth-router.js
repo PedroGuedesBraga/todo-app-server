@@ -11,7 +11,7 @@ router.get('/logout', (req, res) => {
 });
 
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-    res.send(req.user)
+    res.redirect('http://localhost:8080/todo-view')
 });
 
 router.get('/test', (req, res) => {

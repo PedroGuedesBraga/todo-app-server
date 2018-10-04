@@ -30,4 +30,10 @@ router.post('/todo', (req, res) => {
     }
 });
 
+router.get('/userInfo', (req, res) => {
+    console.log(req.user)
+    console.log(res.status)
+    res.send(req.user)
+})
+
 module.exports = router;
